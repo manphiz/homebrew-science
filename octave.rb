@@ -37,13 +37,8 @@ class Octave < Formula
   depends_on 'pcre'
   depends_on 'qhull'
   depends_on 'qrupdate'
-
-  if build.include? 'without-fltk'
-    # required for plotting if we don't have native graphics
-    depends_on 'gnuplot'
-  else
-    depends_on 'fltk'
-  end
+  depends_on 'gnuplot'
+  depends_on 'fltk' => :recommended
 
   # The fix for std::unordered_map requires regenerating
   # configure. Remove once the fix is in next release.
